@@ -36,7 +36,7 @@ void Bullet::Draw(){
 void Bullet::Collision(Base* b){
 	switch (b->m_type){
 	case eType_Field:
-		/*
+		
 		if (Map* m = dynamic_cast<Map*>(b)) {
 			int c, r;
 			int t = m->CollisionMap(m_pos,&c,&r);
@@ -61,7 +61,7 @@ void Bullet::Collision(Base* b){
 			}
 		}
 		break;
-		*/
+		
 		if (Map* m = dynamic_cast<Map*>(b)) {
 			int t = m->CollisionMap(CVector2D(m_pos.x, m_pos_old.y));
 			if (t != 0) {
