@@ -39,7 +39,7 @@ void Player2::StateIdle() {
 					//if (HOLD(CInput::eMouseL) && m_pos.x < mouse.x + 60 || m_pos.x > mouse.x - 60 || m_pos.y < mouse.y + 60 || m_pos.y > mouse.y - 60) {
 					Base::Add(new Arrow(m_pos, m_ang));
 					m_cnt -= 1;
-					m_speed = 1;
+					m_speed = 32;
 					drag = 1;
 					//printf("‚Â‚©‚ñ‚Å‚¢‚é\n");
 					CVector2D vec = CInput::GetMousePoint() - m_pos;

@@ -45,6 +45,7 @@ void Game::Update() {
 				c++;
 				printf("turn:%d\n", turn);
 				printf("c:%d\n", c);
+				F = 0;
 				break;
 			}
 			else {
@@ -52,9 +53,10 @@ void Game::Update() {
 				c++;
 				printf("turn:%d\n", turn);
 				printf("c:%d\n", c);
+				F = 0;
 			}
 		}	
-		F = 0;
+		
 		break;
 	}
 	

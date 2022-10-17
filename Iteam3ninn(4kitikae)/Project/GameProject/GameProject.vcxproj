@@ -28,6 +28,8 @@
     <ClCompile Include="Game\Player2.cpp" />
     <ClCompile Include="Game\Stage.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Title\Clear.cpp" />
+    <ClCompile Include="Title\Clear2.cpp" />
     <ClCompile Include="Title\Title.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -47,6 +49,8 @@
     <ClInclude Include="Game\Player.h" />
     <ClInclude Include="Game\Player2.h" />
     <ClInclude Include="Game\Stage.h" />
+    <ClInclude Include="Title\Clear.h" />
+    <ClInclude Include="Title\Clear2.h" />
     <ClInclude Include="Title\Title.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
