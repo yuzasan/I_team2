@@ -54,6 +54,7 @@ static int stage2data[MAP_HEIGHT][MAP_WIDTH] = {
 Map::Map(int a) : Base(eType_Field) {
 	//âÊëúï°êª
 	m_img = COPY_RESOURCE("MapTip", CImage);
+	back = COPY_RESOURCE("Stage", CImage);
 	m_hp = 100;
 	m_k = a;
 }

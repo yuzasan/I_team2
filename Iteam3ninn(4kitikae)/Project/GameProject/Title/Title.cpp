@@ -10,7 +10,7 @@ Title::Title() :Base(eType_Scene), m_title_text("C:\\Windows\\Fonts\\msgothic.tt
 	m_img = COPY_RESOURCE("Title", CImage);
 }
 
-Title::~Title(){
+Title::~Title() {
 	//全てのオブジェクトを破棄
 	Base::KillAll();
 	if (HOLD(CInput::eButton1)) {//Zキー
@@ -35,7 +35,7 @@ Title::~Title(){
 	}
 }
 
-void Title::Update(){
+void Title::Update() {
 	//ボタン１でタイトル破棄
 	if (PUSH(CInput::eButton1)) {
 		SetKill();
@@ -54,20 +54,20 @@ void Title::Update(){
 	}
 }
 
-void Title::Draw(){
+void Title::Draw() {
 	m_img.Draw();
 	//文字表示
-	m_title_text.Draw(156, 200, 255, 255, 0, "タンク");
+	m_title_text.Draw(156, 200, 255, 255, 120, "モンスト");
 
 	m_menu_text.Draw(156, 280, 0, 100, 100, "SPACE");
 	m_menu_text.Draw(330, 280, 0, 100, 100, "操作説明");
 
 	m_menu_text.Draw(1024, 112, 100, 0, 100, "HOLD C");
-	m_menu_text.Draw(1024, 162, 100, 0, 100, "簡単");
+	m_menu_text.Draw(1024, 162, 100, 0, 100, "easy");
 	m_menu_text.Draw(1024, 262, 100, 0, 100, "HOLD X");
-	m_menu_text.Draw(1024, 312, 100, 0, 100, "普通");
+	m_menu_text.Draw(1024, 312, 100, 0, 100, "normal");
 	m_menu_text.Draw(1024, 412, 100, 0, 100, "HOLD Z");
-	m_menu_text.Draw(1024, 462, 100, 0, 100, "難しい");
+	m_menu_text.Draw(1024, 462, 100, 0, 100, "herd");
 	m_menu_text.Draw(1024, 562, 255, 0, 0, "HOLD V");
 	m_menu_text.Draw(1024, 612, 255, 0, 0, "EXTRA");
 
@@ -75,7 +75,7 @@ void Title::Draw(){
 	m_member_text.Draw(64, 612, 255, 255, 255, "成島航生 ");
 	m_member_text.Draw(370, 612, 255, 255, 255, "三好唯斗");
 	m_member_text.Draw(675, 612, 255, 255, 255, "森本英夫");
-	
+
 
 	/*
 	m_title_text.Draw(64, 512, 0, 0, 0, "HOLD Z");

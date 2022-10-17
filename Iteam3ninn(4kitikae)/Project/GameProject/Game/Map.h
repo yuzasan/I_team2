@@ -10,6 +10,7 @@
 class Map :public Base {
 private:
 	CImage m_img;
+	CImage back;
 public:
 	int m_k;
 	Map(int a);
