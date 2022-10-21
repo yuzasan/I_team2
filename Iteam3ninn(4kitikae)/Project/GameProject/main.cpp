@@ -80,9 +80,9 @@ void Init(void)
 	ADD_RESOURCE("Bullet2", CImage::CreateImage("Image/Bullet2.png"));
 	ADD_RESOURCE("MapTip", CImage::CreateImage("Image/MapTip.png"));
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/Title.png"));
-	ADD_RESOURCE("Clear", CImage::CreateImage("Image/Clear.png"));
-	ADD_RESOURCE("Stage", CImage::CreateImage("Image/Stage.png"));
-	ADD_RESOURCE("Clear2", CImage::CreateImage("Image/Clear2.png"));
+	//ADD_RESOURCE("Clear", CImage::CreateImage("Image/Clear.png"));
+	//ADD_RESOURCE("Stage", CImage::CreateImage("Image/Stage.png"));
+	//ADD_RESOURCE("Clear2", CImage::CreateImage("Image/Clear2.png"));
 	/*
 	//ÉvÉåÉCÉÑÅ[ÇÃê∂ê¨
 	Base::Add(new Player(CVector2D(32 * 3, 32 * 4)));
