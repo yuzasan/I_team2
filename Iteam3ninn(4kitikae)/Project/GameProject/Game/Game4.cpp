@@ -7,17 +7,17 @@
 #include "../Title/Title.h"
 
 Game4::Game4() :Base(eType_Scene), m_title_text("C:\\Windows\\Fonts\\msgothic.ttc", 22) {
-	Base* b = Base::FindObject(eType_Player);
+	
 	Base::Add(new Map(1));
-	for (int i = 1; i <= 4; i++) {
-		Base::Add(new Player2(b->m_pos, m_ang, 0, i, false));
-	}
-	//Base::Add(new Player2(b->m_pos,m_ang,0,0, false));
-	Base::Add(new Enemy2(CVector2D(32 * 28, 32 * 4)));
-	Base::Add(new Enemy2(CVector2D(32 * 28, 32 * 18)));
-	Base::Add(new Enemy2(CVector2D(32 * 37, 32 * 10)));
-	Base::Add(new Enemy2(CVector2D(32 * 17, 32 * 7)));
-	Base::Add(new Enemy2(CVector2D(32 * 17, 32 * 15)));
+	Base::Add(player[0] = new Player2(CVector2D(32 * 8, 32 * 16), m_ang, 0, 0, false));
+	Base::Add(player[1] = new Player2(CVector2D(32 * 16, 32 * 16), m_ang, 0, 1, false));
+	Base::Add(player[2] = new Player2(CVector2D(32 * 24, 32 * 16), m_ang, 0, 2, false));
+	Base::Add(player[3] = new Player2(CVector2D(32 * 32, 32 * 16), m_ang, 0, 3, false));
+	Base::Add(new Enemy2(CVector2D(32 * 34, 32 * 6)));
+	Base::Add(new Enemy2(CVector2D(32 * 34, 32 * 13)));
+	Base::Add(new Enemy2(CVector2D(32 * 23, 32 * 10)));
+	Base::Add(new Enemy2(CVector2D(32 * 10, 32 * 7)));
+	
 
 
 }
@@ -30,9 +30,33 @@ Game4::~Game4() {
 }
 
 void Game4::Update() {
-	//プレイヤー死亡　ボタン１でゲームシーン終了
-	if (!Base::FindObject(eType_Player) && PUSH(CInput::eButton1)) {
-		SetKill();
+	player[turn]->m_state;
+	switch (F) {
+	case 0:
+		player[turn]->m_state = 0;
+		F++;
+		break;
+	case 1:
+		if (player[turn]->m_state != Player2::eState_Stop)break;
+		if (PUSH(CInput::eMouseL)) {
+			if (c == 0) {
+				turn = 0;
+				c++;
+				printf("turn:%d\n", turn);
+				printf("c:%d\n", c);
+				F = 0;
+				break;
+			}
+			else {
+				c++;
+				turn = (turn + 1) % 4;
+				printf("turn:%d\n", turn);
+				printf("c:%d\n", c);
+				F = 0;
+			}
+		}
+
+		break;
 	}
 
 	//敵全滅　ボタン１でゲームシーン終了

@@ -37,8 +37,24 @@ void Game3::Update() {
 		break;
 	case 1:
 		if (player[turn]->m_state != Player2::eState_Stop)break;
-		turn = (turn + 1) % 4;
-		F = 0;
+		if (PUSH(CInput::eMouseL)) {
+			if (c == 0) {
+				turn = 0;
+				c++;
+				printf("turn:%d\n", turn);
+				printf("c:%d\n", c);
+				F = 0;
+				break;
+			}
+			else {
+				c++;
+				turn = (turn + 1) % 4;
+				printf("turn:%d\n", turn);
+				printf("c:%d\n", c);
+				F = 0;
+			}
+		}
+
 		break;
 	}
 

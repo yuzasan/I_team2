@@ -7,7 +7,7 @@
 
 Player2::Player2(const CVector2D& pos, float ang, float speed, int a, bool flag) :Base(eType_Player) {
 	m_img = COPY_RESOURCE("Player", CImage);
-	m_pos_old = m_pos = pos;;
+	m_pos_old = m_pos = pos;
 	//中心を設定
 	m_img.SetCenter(16, 16);
 	//矩形を設定	(左、上、右、下)

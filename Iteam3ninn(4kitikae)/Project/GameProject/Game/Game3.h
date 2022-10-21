@@ -8,6 +8,7 @@ public:
 	int turn = 0;
 	Player2* player[4];
 	int F = 0;
+	int c = 0;
 	Game3();
 	~Game3();
 	void Update();

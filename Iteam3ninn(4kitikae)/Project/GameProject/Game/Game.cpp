@@ -50,8 +50,8 @@ void Game::Update() {
 				break;
 			}
 			else {
-				turn = (turn + 1) % 4;
 				c++;
+				turn = (turn + 1) % 4;
 				printf("turn:%d\n", turn);
 				printf("c:%d\n", c);
 				F = 0;
