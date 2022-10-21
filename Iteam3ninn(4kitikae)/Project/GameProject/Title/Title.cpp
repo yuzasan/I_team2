@@ -8,12 +8,14 @@
 
 Title::Title() :Base(eType_Scene), m_title_text("C:\\Windows\\Fonts\\msgothic.ttc", 128), m_menu_text("C:\\Windows\\Fonts\\msgothic.ttc", 50), m_member_text("C:\\Windows\\Fonts\\msgothic.ttc", 40) {
 	m_img = COPY_RESOURCE("Title", CImage);
+	SOUND("titleBGM")->Play(true);
 }
 
 Title::~Title() {
 	//全てのオブジェクトを破棄
 	Base::KillAll();
 	if (HOLD(CInput::eButton1)) {//Zキー
+		SOUND("titleBGM")->Stop();
 		//ゲームシーンへ
 		Base::Add(new Game());
 	}
@@ -36,6 +38,7 @@ Title::~Title() {
 }
 
 void Title::Update() {
+
 	//ボタン１でタイトル破棄
 	if (PUSH(CInput::eButton1)) {
 		SetKill();

@@ -65,6 +65,7 @@ void Enemy::Collision(Base* b) {
 			//printf("“–‚½‚Á‚½\n");
 			m_hp-=10;
 			hp -= 10;
+			
 		}
 		if (m_time >= 0) {
 			m_time += m_gen;

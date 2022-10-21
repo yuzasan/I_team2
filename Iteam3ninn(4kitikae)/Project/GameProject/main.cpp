@@ -80,6 +80,14 @@ void Init(void)
 	ADD_RESOURCE("Bullet2", CImage::CreateImage("Image/Bullet2.png"));
 	ADD_RESOURCE("MapTip", CImage::CreateImage("Image/MapTip.png"));
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/Title.png"));
+
+	SOUND("atkSE")->Load("Sound/SE/atkSE.wav");
+	SOUND("kabeSE")->Load("Sound/SE/kabeSE.wav");
+	SOUND("kakudSE")->Load("Sound/SE/kakudSE.wav");
+
+	SOUND("titleBGM")->Load("Sound/BGM/titleBGM.wav");
+	SOUND("kuesutoBGM")->Load("Sound/BGM/kuesutoBGM.wav");
+
 	//ADD_RESOURCE("Clear", CImage::CreateImage("Image/Clear.png"));
 	//ADD_RESOURCE("Stage", CImage::CreateImage("Image/Stage.png"));
 	//ADD_RESOURCE("Clear2", CImage::CreateImage("Image/Clear2.png"));

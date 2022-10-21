@@ -41,6 +41,7 @@ void Player2::StateIdle() {
 					m_cnt -= 1;
 					m_speed = 32;
 					drag = 1;
+					
 					//printf("‚Â‚©‚ñ‚Å‚¢‚é\n");
 					CVector2D vec = CInput::GetMousePoint() - m_pos;
 					m_ang = atan2(vec.x, vec.y);
@@ -177,10 +178,11 @@ void Player2::Collision(Base* b) {
 			*/
 			int t = m->CollisionMap(CVector2D(m_pos.x, m_pos_old.y), m_rect);
 			if (t == 1) {
+				SOUND("kabeSE")->Play();
 				m_pos.x = m_pos_old.x;
 				m_vec.x *= -1;
 				m_speed -= 1.0;
-
+				
 			} else if (t == 2) {
 				m_pos.x = m_pos_old.x;
 				m_vec.x *= -1;
@@ -199,6 +201,7 @@ void Player2::Collision(Base* b) {
 			*/
 			t = m->CollisionMap(CVector2D(m_pos_old.x, m_pos.y), m_rect);
 			if (t == 1) {
+				SOUND("kabeSE")->Play();
 				m_pos.y = m_pos_old.y;
 				m_vec.y *= -1;
 				m_speed -= 1.0;

@@ -8,6 +8,7 @@
 #include "../Title/Title.h"
 
 Game::Game() :Base(eType_Scene), m_title_text("C:\\Windows\\Fonts\\msgothic.ttc", 32) {
+	SOUND("kuesutoBGM")->Play(true);
 	Base::Add(new Map(0));
 	Base::Add(player[0] = new Player2(CVector2D(32 * 8, 32 * 16), m_ang, 0, 0, false));
 	Base::Add(player[1] = new Player2(CVector2D(32 * 16, 32 * 16), m_ang, 0, 1, false));

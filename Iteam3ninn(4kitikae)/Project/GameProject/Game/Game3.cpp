@@ -21,6 +21,7 @@ Game3::Game3() :Base(eType_Scene), m_title_text("C:\\Windows\\Fonts\\msgothic.tt
 }
 
 Game3::~Game3() {
+	SOUND("kuesutoBGM")->Stop();
 	//全てのオブジェクトを破棄
 	Base::KillAll();
 	//タイトルシーンへ
