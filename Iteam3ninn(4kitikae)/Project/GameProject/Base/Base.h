@@ -3,10 +3,12 @@
 enum {
 	eType_Field,
 	eType_Arrow,
+	eType_Boss,
 	eType_Enemy,
 	eType_Player,
 	eType_Player_Bullet,
 	eType_Enemy_Bullet,
+	eType_Attack,
 	eType_Goal,
 	eType_Effect,
 	eType_UI,

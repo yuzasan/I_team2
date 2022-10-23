@@ -8,6 +8,7 @@ class Game : public Base {
 	//Player2* player[2];
 public:
 	int turn = 0;
+	int k = 0;
 	Player2* player[4];
 	int F=0;
 	int c = 0;

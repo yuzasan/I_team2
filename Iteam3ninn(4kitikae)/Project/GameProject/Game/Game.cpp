@@ -1,5 +1,7 @@
 #include "Game.h"
 #include "Game2.h"
+#include "Gameclear.h"
+#include "Gameover.h"
 #include "Map.h"
 #include "Player2.h"
 #include "Enemy.h"
@@ -24,10 +26,18 @@ Game::Game() :Base(eType_Scene), m_title_text("C:\\Windows\\Fonts\\msgothic.ttc"
 }
 
 Game::~Game(){
-	//全てのオブジェクトを破棄
-	Base::KillAll();
-	//タイトルシーンへ
-	Base::Add(new Game2());
+	switch (k) {
+	case 0:
+		//全てのオブジェクトを破棄
+		Base::KillAll();
+		Base::Add(new Game2());
+		break;
+	case 1:
+		//全てのオブジェクトを破棄
+		Base::KillAll();
+		Base::Add(new Gameover());
+		break;
+	}
 }
 
 void Game::Update() {
@@ -57,13 +67,18 @@ void Game::Update() {
 				F = 0;
 			}
 		}	
-		
 		break;
 	}
 	
-	//敵全滅　ボタン１でゲームシーン終了
+	//敵全滅でゲームシーン終了
 	if (!Base::FindObject(eType_Enemy)) {
 		SetKill();
+	}
+
+	//プレイヤー全滅でゲームシーン終了
+	if (!Base::FindObject(eType_Player)) {
+		SetKill();
+		k = 1;
 	}
 
 	//エンターキーでゲームシーン終了

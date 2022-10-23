@@ -23,9 +23,12 @@
     <ClCompile Include="Game\Game3.cpp" />
     <ClCompile Include="Game\Game4.cpp" />
     <ClCompile Include="Game\Game5.cpp" />
+    <ClCompile Include="Game\Gameclear.cpp" />
+    <ClCompile Include="Game\Gameover.cpp" />
     <ClCompile Include="Game\Map.cpp" />
     <ClCompile Include="Game\Player.cpp" />
     <ClCompile Include="Game\Player2.cpp" />
+    <ClCompile Include="Game\Slash.cpp" />
     <ClCompile Include="Game\Stage.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Title\Title.cpp" />
@@ -43,9 +46,12 @@
     <ClInclude Include="Game\Game3.h" />
     <ClInclude Include="Game\Game4.h" />
     <ClInclude Include="Game\Game5.h" />
+    <ClInclude Include="Game\Gameclear.h" />
+    <ClInclude Include="Game\Gameover.h" />
     <ClInclude Include="Game\Map.h" />
     <ClInclude Include="Game\Player.h" />
     <ClInclude Include="Game\Player2.h" />
+    <ClInclude Include="Game\Slash.h" />
     <ClInclude Include="Game\Stage.h" />
     <ClInclude Include="Title\Title.h" />
   </ItemGroup>

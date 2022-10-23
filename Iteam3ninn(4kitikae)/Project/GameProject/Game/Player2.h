@@ -2,6 +2,9 @@
 #include "../Base/Base.h"
 
 class Player2 : public Base{
+private:
+	int m_attack_no;
+	int m_damage_no;
 public:
 	enum {
 		eState_Idle,
@@ -12,6 +15,9 @@ public:
 	int m_state;
 
 	CImage m_img;
+	CImage m_img2;
+	CImage m_img3;
+
 	bool m_flag;
 
 	void StateIdle();
@@ -23,6 +29,7 @@ public:
 	int drag;
 	int C;
 public:
+	int hp;
 	int m;
 	Player2(const CVector2D& pos, float ang, float speed, int a,bool flag);
 	void Update();

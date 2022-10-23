@@ -1,4 +1,6 @@
 #include "Game3.h"
+#include "Gameclear.h"
+#include "Gameover.h"
 #include "Map.h"
 #include "Player2.h"
 #include "Enemy.h"
@@ -22,10 +24,18 @@ Game3::Game3() :Base(eType_Scene), m_title_text("C:\\Windows\\Fonts\\msgothic.tt
 
 Game3::~Game3() {
 	SOUND("kuesutoBGM")->Stop();
-	//全てのオブジェクトを破棄
-	Base::KillAll();
-	//タイトルシーンへ
-	Base::Add(new Title());
+	switch (k) {
+	case 0:
+		//全てのオブジェクトを破棄
+		Base::KillAll();
+		Base::Add(new Gameclear());
+		break;
+	case 1:
+		//全てのオブジェクトを破棄
+		Base::KillAll();
+		Base::Add(new Gameover());
+		break;
+	}
 }
 
 void Game3::Update() {
@@ -58,9 +68,15 @@ void Game3::Update() {
 		break;
 	}
 
-	//敵全滅　ボタン１でゲームシーン終了
-	if (!Base::FindObject(eType_Enemy)) {
+	//ボス撃破でゲームシーン終了
+	if (!Base::FindObject(eType_Boss)) {
 		SetKill();
+	}
+
+	//プレイヤー全滅でゲームシーン終了
+	if (!Base::FindObject(eType_Player)) {
+		SetKill();
+		k = 1;
 	}
 
 	//エンターキーでゲームシーン終了
