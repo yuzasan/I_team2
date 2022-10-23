@@ -1,5 +1,6 @@
 #include "Boss.h"
 #include "Bullet.h"
+#include "Bullet2.h"
 #include "Player2.h"
 #include "Slash.h"
 #include "Map.h"
@@ -41,7 +42,7 @@ void Boss::Update() {
 		CVector2D vec = b->m_pos - m_pos;
 		m_ang = atan2(vec.x, vec.y);
 		if (c % 60 == 0) {
-			Base::Add(new Bullet(eType_Enemy_Bullet, m_pos, m_ang, 4));
+			Base::Add(new Bullet2(eType_Enemy_Bullet, m_pos, m_ang, 4));
 			Base::Add(new Bullet(eType_Enemy_Bullet, m_pos, 22.5, 4));
 			Base::Add(new Bullet(eType_Enemy_Bullet, m_pos, 45, 4));
 			Base::Add(new Bullet(eType_Enemy_Bullet, m_pos, 67.5, 4));
@@ -69,7 +70,6 @@ void Boss::Update() {
 
 void Boss::Draw() {
 	m_img.SetPos(m_pos);
-	//m_img.SetAng(m_ang);
 	m_img.SetSize(200, 200);
 	m_img.Draw();
 	m_img3.SetPos(630, 0);
@@ -86,9 +86,6 @@ void Boss::Collision(Base* b) {
 		if (Slash* s = dynamic_cast<Slash*>(b)) {
 			if (m_damage_no != s->GetAttackNo() && Base::CollisionRect(this, s)) {
 				m_damage_no = s->GetAttackNo();
-				//printf("Enemy_m_damage_no:%d\n", m_damage_no);
-				//m_cnt = 0;
-				//printf("“–‚½‚Á‚½\n");
 				m_hp -= 20;
 				hp -= 20;
 			}

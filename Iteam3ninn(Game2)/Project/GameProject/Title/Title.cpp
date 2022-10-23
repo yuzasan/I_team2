@@ -62,17 +62,17 @@ void Title::Draw() {
 	//文字表示
 	m_title_text.Draw(156, 200, 255, 255, 120, "モンスト");
 
-	m_menu_text.Draw(156, 280, 0, 100, 100, "SPACE");
-	m_menu_text.Draw(330, 280, 0, 100, 100, "操作説明");
+	//m_menu_text.Draw(156, 280, 0, 100, 100, "SPACE");
+	//m_menu_text.Draw(330, 280, 0, 100, 100, "操作説明");
 
-	m_menu_text.Draw(1024, 112, 100, 0, 100, "HOLD C");
-	m_menu_text.Draw(1024, 162, 100, 0, 100, "easy");
-	m_menu_text.Draw(1024, 262, 100, 0, 100, "HOLD X");
-	m_menu_text.Draw(1024, 312, 100, 0, 100, "normal");
-	m_menu_text.Draw(1024, 412, 100, 0, 100, "HOLD Z");
-	m_menu_text.Draw(1024, 462, 100, 0, 100, "herd");
+	//m_menu_text.Draw(1024, 112, 100, 0, 100, "HOLD C");
+	//m_menu_text.Draw(1024, 162, 100, 0, 100, "easy");
+	//m_menu_text.Draw(1024, 262, 100, 0, 100, "HOLD X");
+	//m_menu_text.Draw(1024, 312, 100, 0, 100, "normal");
+	m_menu_text.Draw(1024, 262, 100, 0, 100, "HOLD Z");
+	m_menu_text.Draw(1024, 312, 100, 0, 100, "簡単");
 	m_menu_text.Draw(1024, 562, 255, 0, 0, "HOLD V");
-	m_menu_text.Draw(1024, 612, 255, 0, 0, "EXTRA");
+	m_menu_text.Draw(1024, 612, 255, 0, 0, "？");
 
 	m_member_text.Draw(64, 512, 255, 255, 255, "メンバー");
 	m_member_text.Draw(64, 612, 255, 255, 255, "成島航生 ");

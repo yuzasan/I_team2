@@ -1,4 +1,6 @@
 #include "Game5.h"
+#include "Gameclear.h"
+#include "Gameover.h"
 #include "Map.h"
 #include "Player2.h"
 #include "Enemy.h"
@@ -21,10 +23,18 @@ Game5::Game5() :Base(eType_Scene), m_title_text("C:\\Windows\\Fonts\\msgothic.tt
 }
 
 Game5::~Game5() {
+	switch (k) {
+	case 0:
 		//全てのオブジェクトを破棄
 		Base::KillAll();
-		//タイトルシーンへ
-		Base::Add(new Title());
+		Base::Add(new Gameclear());
+		break;
+	case 1:
+		//全てのオブジェクトを破棄
+		Base::KillAll();
+		Base::Add(new Gameover());
+		break;
+	}
 }
 
 void Game5::Update() {
@@ -57,9 +67,15 @@ void Game5::Update() {
 		break;
 	}
 
-	//敵全滅　ボタン１でゲームシーン終了
-	if (!Base::FindObject(eType_Enemy) && PUSH(CInput::eMouseR)) {
+	//ボス撃破でゲームシーン終了
+	if (!Base::FindObject(eType_Boss)) {
 		SetKill();
+	}
+
+	//プレイヤー全滅でゲームシーン終了
+	if (!Base::FindObject(eType_Player)) {
+		SetKill();
+		k = 1;
 	}
 
 	//エンターキーでゲームシーン終了

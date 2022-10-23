@@ -72,10 +72,14 @@ void Init(void)
 	ADD_RESOURCE("Arrow", CImage::CreateImage("Image/Arrow.png"));
 	ADD_RESOURCE("Arrow2", CImage::CreateImage("Image/Arrow2.png"));
 	ADD_RESOURCE("Player", CImage::CreateImage("Image/Player.png"));
+	ADD_RESOURCE("PlayerHPbar", CImage::CreateImage("Image/PlayerHPbar.png"));
+	ADD_RESOURCE("PlayerHP", CImage::CreateImage("Image/PlayerHP.png"));
 	ADD_RESOURCE("Enemy", CImage::CreateImage("Image/Enemy.png"));
 	ADD_RESOURCE("Enemy2", CImage::CreateImage("Image/Enemy2.png"));
 	ADD_RESOURCE("Hp", CImage::CreateImage("Image/Hp.png"));
 	ADD_RESOURCE("Boss", CImage::CreateImage("Image/Boss.png"));
+	ADD_RESOURCE("Bosshp", CImage::CreateImage("Image/Bosshp.png"));
+	ADD_RESOURCE("Bosshpbar", CImage::CreateImage("Image/Bosshpbar.png"));
 	ADD_RESOURCE("Bullet", CImage::CreateImage("Image/Bullet.png"));
 	ADD_RESOURCE("Bullet2", CImage::CreateImage("Image/Bullet2.png"));
 	ADD_RESOURCE("MapTip", CImage::CreateImage("Image/MapTip.png"));

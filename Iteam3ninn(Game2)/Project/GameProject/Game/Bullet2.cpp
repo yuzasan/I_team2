@@ -37,30 +37,9 @@ void Bullet2::Draw() {
 
 void Bullet2::Collision(Base* b) {
 	switch (b->m_type) {
-	case eType_Field:
-		if (Map* m = dynamic_cast<Map*>(b)) {
-			int t = m->CollisionMap(CVector2D(m_pos.x, m_pos_old.y));
-			if (t != 0) {
-				m_pos.x = m_pos_old.x;
-				m_vec.x *= -1;
-				m_cnt--;
-			}
-			t = m->CollisionMap(CVector2D(m_pos_old.x, m_pos.y));
-			if (t != 0) {
-				m_pos.y = m_pos_old.y;
-				m_vec.y *= -1;
-				m_cnt--;
-			}
-			if (m_cnt == 0) {
-				SetKill();
-				m_cnt = 2;
-			}
-		}
-		break;
 	case eType_Player:
 		if (m_type == eType_Enemy_Bullet && Base::CollisionCircle(this, b)) {
 			SetKill();
-			b->SetKill();
 		}
 
 		if (m_type == eType_Player_Bullet && Base::CollisionCircle(this, b) && m_cnt == 1) {

@@ -29,6 +29,7 @@ Player2::Player2(const CVector2D& pos, float ang, float speed, int a, bool flag)
 	C = 0;
 	m = a;
 	m_flag = flag;
+	hp = 1100;
 	m_state = eState_Stop;
 	m_attack_no = rand();
 	m_damage_no = -1;
