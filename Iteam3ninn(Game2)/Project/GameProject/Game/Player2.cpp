@@ -136,7 +136,7 @@ void Player2::Collision(Base* b) {
 			}
 			t = m->CollisionMap(CVector2D(m_pos_old.x, m_pos.y), m_rect);
 			if (t == 1) {
-				SOUND("kabeSE")->Play();
+				//SOUND("kabeSE")->Play();
 				m_pos.y = m_pos_old.y;
 				m_vec.y *= -1;
 				m_speed -= 2.0;
