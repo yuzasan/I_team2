@@ -4,6 +4,7 @@
 #include "../Game/Game3.h"
 #include "../Game/Game4.h"
 #include "../Game/Game5.h"
+#include "../Game/Stage.h"
 
 
 Title::Title() :Base(eType_Scene), m_title_text("C:\\Windows\\Fonts\\msgothic.ttc", 128), m_menu_text("C:\\Windows\\Fonts\\msgothic.ttc", 50), m_member_text("C:\\Windows\\Fonts\\msgothic.ttc", 40) {
@@ -33,7 +34,7 @@ Title::~Title() {
 	}
 	if (HOLD(CInput::eButton5)) {//VK_SPACE
 		//ゲームシーンへ
-		Base::Add(new Game5());
+		Base::Add(new Stage());
 	}
 }
 
@@ -62,8 +63,8 @@ void Title::Draw() {
 	//文字表示
 	m_title_text.Draw(156, 200, 255, 255, 120, "モンスト");
 
-	//m_menu_text.Draw(156, 280, 0, 100, 100, "SPACE");
-	//m_menu_text.Draw(330, 280, 0, 100, 100, "操作説明");
+	m_menu_text.Draw(156, 280, 0, 100, 100, "SPACE");
+	m_menu_text.Draw(330, 280, 0, 100, 100, "操作説明");
 
 	//m_menu_text.Draw(1024, 112, 100, 0, 100, "HOLD C");
 	//m_menu_text.Draw(1024, 162, 100, 0, 100, "easy");
