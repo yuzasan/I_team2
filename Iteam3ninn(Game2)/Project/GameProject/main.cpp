@@ -82,6 +82,8 @@ void Init(void)
 	ADD_RESOURCE("Bosshpbar", CImage::CreateImage("Image/Bosshpbar.png"));
 	ADD_RESOURCE("Bullet", CImage::CreateImage("Image/Bullet.png"));
 	ADD_RESOURCE("Bullet2", CImage::CreateImage("Image/Bullet2.png"));
+	ADD_RESOURCE("Clear", CImage::CreateImage("Image/Clear.png"));
+	ADD_RESOURCE("Clear2", CImage::CreateImage("Image/Clear2.png"));
 	ADD_RESOURCE("MapTip", CImage::CreateImage("Image/MapTip.png"));
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/Title.png"));
 

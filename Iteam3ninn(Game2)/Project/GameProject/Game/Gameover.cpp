@@ -7,7 +7,7 @@
 #include "../Game/Game5.h"
 
 Gameover::Gameover() :Base(eType_Scene), m_title_text("C:\\Windows\\Fonts\\msgothic.ttc", 64) {
-
+	m_img = COPY_RESOURCE("Clear2", CImage);
 }
 
 Gameover::~Gameover() {
@@ -26,6 +26,7 @@ void Gameover::Update() {
 }
 
 void Gameover::Draw() {
-	m_title_text.Draw(156, 200, 255, 0, 0, "GameOver");
-	m_title_text.Draw(156, 400, 255, 0, 0, "‚ ‚È‚½‚Ì•‰‚¯");
+	m_img.Draw();
+	m_title_text.Draw(156, 100, 255, 0, 0, "GameOver");
+	m_title_text.Draw(500, 100, 255, 0, 0, "‚ ‚È‚½‚Ì•‰‚¯");
 }
